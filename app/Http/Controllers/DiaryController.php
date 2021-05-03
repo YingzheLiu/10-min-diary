@@ -46,7 +46,7 @@ class DiaryController extends Controller
         ]);
 
         $notification = array(
-            'message' => 'I am a successful message!',
+            'message' => 'Successfully post a diary!',
             'alert-type' => 'success'
         );
 
@@ -106,10 +106,11 @@ class DiaryController extends Controller
     public function delete($id)
     {
         $diary = Diary::find($id);
+        $date = $diary->created_at->format('m/d/Y');
         $diary->delete();
 
         $notification = array(
-            'message' => 'Successfully delete the diary',
+            'message' => 'Successfully delete the diary on ' + $date,
             'alert-type' => 'success'
         );
 

@@ -34,7 +34,7 @@ class CommentController extends Controller
         ]);
 
         $notification = array(
-            'message' => 'You successfully posted a comment!',
+            'message' => 'Successfully posted a comment!',
             'alert-type' => 'success'
         );
 
