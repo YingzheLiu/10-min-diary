@@ -2,7 +2,7 @@
 
 ### Demo
 - [Heruko Deployed Link](https://ten-min-diary.herokuapp.com/login)
-- [Zoom Video Walkthrough](https://github.com/YingzheLiu/10-min-diary)
+- [Zoom Video Walkthrough](https://usc.zoom.us/rec/share/-asiTwhWETB-ANriHeYEAAnzO600sws7WNsvk_wyUYfs32uIez1OonJSNtCRoQOA.wS8GD6vQxUEcoHAI)
 
 ### The Database
 - Database Diagram is created by draw.io in google drive <br />
