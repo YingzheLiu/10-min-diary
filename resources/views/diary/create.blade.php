@@ -3,6 +3,18 @@
 @section('title', 'New Diary')
 
 @section('content')
+    <script>
+        $(window).on('load', function () {
+            const words = "{{ old('content') }}".split(' ');
+            console.log(words);
+            if (words.length == 1 && !words[0]) {
+                $('#current_count').text(0);
+            }
+            else {
+                $('#current_count').text(words.length);
+            }
+        });
+    </script>
     <div id="countdown" class="text-white float-right" style="margin-left: 1195px"></div>
     <form action="{{ route('diary.store') }}" method="POST">
         @csrf
@@ -14,10 +26,6 @@
                 <span id="maximum_count">/ 100</span>
                 <span>words</span>
             </div>
-            {{-- <span id="cd-days">00</span> Days 
-            <span id="cd-hours">00</span> Hours
-            <span id="cd-minutes">00</span> Minutes
-            <span id="cd-seconds">00</span> Seconds --}}
             @error('content')
                 <small class="text-danger">{{ $message }}</small>
             @enderror
@@ -50,26 +58,22 @@
     </form>
     <script type="text/javascript">
         $('textarea').keyup(function() {          
-            var s = $(this).val();
-            var wordCount = 0;
-            s = s.replace(/(^\s*)|(\s*$)/gi,"");
-	        s = s.replace(/[ ]{2,}/gi," ");
-	        s = s.replace(/\n /,"\n");
-            wordCount = s.split(' ').length;
-            var current_count = $('#current_count');
-            current_count.text(wordCount);     
+            const words = $(this).val().split(' ');
+            $('#current_count').text(words.length);
         });
         const startMinutes = 10;
         let time = startMinutes * 60
         const countdown = document.getElementById('countdown');
-        setInterval(updateCountdown, 1000);
+        var myTimer = setInterval(updateCountdown, 1000);
         function updateCountdown() {
             const minutes = Math.floor(time / 60);
             let seconds = time % 60;
             seconds = seconds < 10 ? '0' + seconds : seconds;
-            //minutes = minutes < 10 ? '0' + minutes : minutes;
             countdown.innerHTML = `${minutes}: ${seconds}`;
             time--;
+            if (time == -1) {
+                clearInterval(myTimer);
+            } 
         }
     </script>
 @endsection

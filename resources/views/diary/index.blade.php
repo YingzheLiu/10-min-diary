@@ -3,6 +3,9 @@
 @section('title', 'Diaries')
 
 @section('content')
+    <div class="alert alert-warning" role="alert">
+        One diary per day!
+    </div>
     <div class="text-end mb-3">
         <a href="{{ route('diary.create') }}" class="btn btn-success">New Diary</a>
     </div>

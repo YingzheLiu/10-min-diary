@@ -22,9 +22,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    @if(url()->current() === route('diary.index'))
+                    @if(url()->current() === route('diary.index') || url()->current() === route('diary.create') || str_contains(url()->current(), 'edit') || str_contains(url()->current(), 'delete'))
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('diary.index') }}">Diaries</a>
+                            <a class="nav-link active" aria-current="page">Diaries</a>
                         </li>
                     @else
                         <li class="nav-item">
@@ -34,7 +34,7 @@
 
                     @if(url()->current() === route('todo.index'))
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('todo.index') }}">To-Do</a>
+                            <a class="nav-link active">To-Do</a>
                         </li>
                     @else
                         <li class="nav-item">
@@ -44,7 +44,7 @@
 
                     @if(url()->current() === route('about'))
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('about') }}">About</a>
+                            <a class="nav-link active">About</a>
                         </li>
                     @else
                         <li class="nav-item">
@@ -66,6 +66,22 @@
         </nav>
     @endif
     <div class="container mt-3 mb-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            @if (url()->current() === route('diary.create'))
+                <li class="breadcrumb-item"><a href="{{ route('diary.index') }}">Diaries</a></li>
+                <li class="breadcrumb-item active" aria-current="page">New Diary</li>
+            @endif
+            @if (str_contains(url()->current(), 'edit'))
+                <li class="breadcrumb-item"><a href="{{ route('diary.index') }}">Diaries</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Edit Diary - @yield('date')</li>
+            @endif
+            @if (str_contains(url()->current(), 'delete'))
+                <li class="breadcrumb-item"><a href="{{ route('diary.index') }}">Diaries</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Delete Diary - @yield('date')</li>
+            @endif
+            </ol>
+        </nav>
         @if (session('success'))
             <div class="alert alert-success" role="alert">
                 {{ session('success') }}

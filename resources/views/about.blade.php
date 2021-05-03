@@ -7,10 +7,13 @@
 @section('content')
     <p> 
         A couple of years ago, I accidentally found my diaries that I wrote when I was little at home. 
-        It was very interesting to recall what happended back then and how much I have growed up. 
+        It was very interesting to recall what happended back then and how much I have grew. 
+        I made my mom angry by running away from my dentist to the street.
+        I had my first crush.
+        I celebrated my grandfather's birthday but blew out all the candles...
         The goal of this app is to encourage people to write a diary everyday.
-        I know everyone is very busy nowadays. 
-        But it just takes 10 mins in a day to document the most important things happen.       
+        I know everyone is busy nowadays. 
+        But just takes 10 mins in your day, and document the most meaning things happen.       
     </p>
     <p>
         Let's record what things happen and how you are feeling every day.

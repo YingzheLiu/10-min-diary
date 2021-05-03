@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Diary;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
 

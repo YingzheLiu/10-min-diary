@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Diary;
 use App\Models\EmojiIcon;
+use App\Rules\HasntPostToday;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Carbon;
 
 class DiaryController extends Controller
 {
@@ -32,11 +34,15 @@ class DiaryController extends Controller
             'emoji' => 'required|exists:emoji_icons,id',
         ]);
 
+        $request->validate([
+            'content' => [new HasntPostToday],
+        ]);
+
         Diary::create([
             'content' => $request->input('content'),
             'emoji_icon_id' => $request->input('emoji'),
             'user_id' => Auth::user()->id,
-            'created_at' => now()
+            'created_at' => now(),
         ]);
 
         $notification = array(

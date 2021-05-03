@@ -3,6 +3,9 @@
 @section('title', 'To-Do')
 
 @section('content')
+    <div class="alert alert-warning" role="alert">
+        Only the tasks posted today will appear here!
+    </div>
     <!-- Modal -->
     <div class="modal" id="myModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog">
