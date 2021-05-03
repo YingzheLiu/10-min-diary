@@ -4,7 +4,11 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DiaryController;
 use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
+if (env('APP_ENV') !== 'local') {
+    URL::forceScheme('https');
+}
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,10 +19,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::get('/', function () {
     return redirect()->route('diary.index');
