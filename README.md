@@ -6,7 +6,7 @@
 
 ### The Database
 - Database Diagram is created by draw.io in google drive <br />
-- <img src="https://github.com/YingzheLiu/10-min-diary/blob/master/databaseDiagram.png" width="400">
+- <img src="https://github.com/YingzheLiu/10-min-diary/blob/master/databaseDiagram.png" width="600" height="550">
 
 ### The Application
 Build an application using Laravel with the following requirements:
