@@ -5,8 +5,8 @@
 - [Zoom Video Walkthrough](https://ten-min-diary.herokuapp.com/login)
 
 ### The Database
-Database Diagram is created by draw.io in google drive <hr />
-<img src="https://github.com/YingzheLiu/10-min-diary/blob/master/databaseDiagram.png" width="400" align="left">
+- Database Diagram is created by draw.io in google drive <br />
+- <img src="https://github.com/YingzheLiu/10-min-diary/blob/master/databaseDiagram.png" width="400" align="left">
 
 ### The Application
 Build an application using Laravel with the following requirements:
@@ -31,6 +31,6 @@ Build an application using Laravel with the following requirements:
 - The document title (the title tag) for each page is unique and contain meaningful, contextual data
 - Eloquent and the Query Builder are used for all database access
 - Pages are organized and have a consistent layout with Bootstrap
--
+
 ### Additional Feature
 There is a commenting system from scratch for some resource in the application in the `/about` page. The comments in the commenting system should at the very least contain the commenter’s name, a comment body, and a time stamp. When comments are displayed, they are sorted from the most recent to the oldest
