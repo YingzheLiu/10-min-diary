@@ -110,7 +110,7 @@ class DiaryController extends Controller
         $diary->delete();
 
         $notification = array(
-            'message' => 'Successfully delete the diary on ' + $date,
+            'message' => 'Successfully delete the diary',
             'alert-type' => 'success'
         );
 
