@@ -1,0 +1,35 @@
+body {
+    background-image: url("../fruit1.jpeg");
+    /* background-repeat: no-repeat; */
+    /* background-position: center top; */
+    background-position: 50% 10%;
+}
+/* header {
+    margin-left: 110px;
+} */
+.form-control {
+    display: inline-block !important;
+}
+.login-body {
+    margin-top: 100px;
+}
+.register-body {
+    margin-top: 70px;
+}
+input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+}
+.col-1 {
+    flex: 0 0 auto;
+    width: 5.3333333333%;
+}
+#countdown {
+    background-color: #000000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 0;
+    height: 50px;
+    width: 100px;
+}
